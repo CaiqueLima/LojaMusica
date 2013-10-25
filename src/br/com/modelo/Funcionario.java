@@ -1,6 +1,6 @@
 package br.com.modelo;
 
-public class Funcionario extends PessoaFisica {
+public class Funcionario extends PessoaFisica{
 
     private double salario;
     private String cargo;

@@ -2,6 +2,7 @@ package br.com.modelo;
 
 public class Endereco {
 
+    private int codigo;
     private String estado;
     private String cidade;
     private String bairro;
@@ -10,6 +11,14 @@ public class Endereco {
     private int numero;
 
     public Endereco() {
+    }
+
+    public int getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
     }
 
     public String getEstado() {

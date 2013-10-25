@@ -1,5 +1,7 @@
 package br.com.modelo;
 
+
+import br.com.modelo.Pessoa;
 import java.util.Date;
 
 public abstract class PessoaFisica extends Pessoa {
