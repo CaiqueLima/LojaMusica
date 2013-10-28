@@ -163,6 +163,7 @@ public class FuncionarioDAOJDBC implements FuncionarioDAO {
                 e.setRua(rs.getString("endereco.rua"));
                 e.setComplemento(rs.getString("endereco.complemento"));
                 e.setNumero(rs.getInt("endereco.numero"));
+                e.setCodigo(rs.getInt("endereco.codigo"));
                 f.setEndereco(e);
 
                 f.setSalario(rs.getDouble("salario"));
@@ -199,7 +200,6 @@ public class FuncionarioDAOJDBC implements FuncionarioDAO {
             pstm.setString(5, f.getRg());
             pstm.setString(6, f.getCpf());
             pstm.setString(7, f.getTelefone());
-            //pstm.setInt(8, f.getEndereco().getCodigo());
             pstm.setDouble(8, f.getSalario());
             pstm.setString(9, f.getCargo());
             pstm.setString(10, f.getLogin());

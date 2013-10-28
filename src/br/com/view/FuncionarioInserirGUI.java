@@ -21,6 +21,7 @@ public class FuncionarioInserirGUI extends javax.swing.JFrame {
 
     private DefaultTableModel modelo;
     private int linhaSelecionada;
+    private int codigoEndereco;
     /**
      * Creates new form UsuarioInserirGUI
      */
@@ -34,9 +35,11 @@ public class FuncionarioInserirGUI extends javax.swing.JFrame {
         this.modelo = modelo;
         this.linhaSelecionada = linhaSelecionada;
         initComponents();
+        
         FuncionarioController fc = new FuncionarioController();
         Funcionario f = fc.listById(idUsuario);
-        
+       
+        this.codigoEndereco = f.getEndereco().getCodigo();
         txCodigo.setText(Integer.toString(f.getCodigo()));
         txNome.setText(f.getNome());
         txIdade.setText(String.valueOf(f.getIdade()));
@@ -47,6 +50,7 @@ public class FuncionarioInserirGUI extends javax.swing.JFrame {
         txTelefone.setText(f.getTelefone());
         txSalario.setText(String.valueOf(f.getSalario()));
         txCargo.setText(f.getCargo());
+        
 
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
         try{
@@ -69,6 +73,7 @@ public class FuncionarioInserirGUI extends javax.swing.JFrame {
         txRua.setText(f.getEndereco().getRua());
         txComplemento.setText(f.getEndereco().getComplemento());
         txNumero.setText(String.valueOf(f.getEndereco().getNumero()));
+        codigoEndereco = f.getEndereco().getCodigo();
     }
 
     /**
@@ -565,6 +570,8 @@ public class FuncionarioInserirGUI extends javax.swing.JFrame {
         e.setRua(txRua.getText());
         e.setComplemento(txComplemento.getText());
         e.setNumero (Integer.parseInt(txNumero.getText()));
+        e.setCodigo(codigoEndereco);
+        
         EnderecoController ec = new EnderecoController();
         e.setCodigo(ec.salvar(e));
        
