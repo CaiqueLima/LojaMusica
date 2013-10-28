@@ -127,7 +127,7 @@ public class FuncionarioInserirGUI extends javax.swing.JFrame {
         btLimpar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Cadastro");
+        setTitle("Janela de Cadastro");
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -557,6 +557,7 @@ public class FuncionarioInserirGUI extends javax.swing.JFrame {
 
     private void btSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSalvarActionPerformed
         //Botão salvar/adicionar
+     
         Endereco e = new Endereco();
         e.setEstado(txEstado.getText());
         e.setCidade(txCidade.getText());

@@ -5,6 +5,7 @@
 package br.com.view;
 
 import br.com.controller.FuncionarioController;
+import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
 
 /**
@@ -23,6 +24,8 @@ public class JanelaLogin extends javax.swing.JFrame {
     private void validarLogin(){
         
        FuncionarioController fc = new FuncionarioController();
+       
+       
        
        String senha = txSenha.getText();
        String login = txLogin.getText();
@@ -108,6 +111,11 @@ public class JanelaLogin extends javax.swing.JFrame {
                 txLoginActionPerformed(evt);
             }
         });
+        txLogin.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txLoginKeyPressed(evt);
+            }
+        });
 
         btEntrar.setText("Entrar");
         btEntrar.addActionListener(new java.awt.event.ActionListener() {
@@ -132,6 +140,16 @@ public class JanelaLogin extends javax.swing.JFrame {
         jButton2.setDefaultCapable(false);
 
         txSenha.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txSenha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txSenhaActionPerformed(evt);
+            }
+        });
+        txSenha.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txSenhaKeyPressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -229,13 +247,29 @@ public class JanelaLogin extends javax.swing.JFrame {
 
     private void btEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEntrarActionPerformed
        validarLogin();
-        
-      
+     
     }//GEN-LAST:event_btEntrarActionPerformed
 
     private void btSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSairActionPerformed
         System.exit(0);
     }//GEN-LAST:event_btSairActionPerformed
+
+    private void txSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txSenhaActionPerformed
+
+       
+    }//GEN-LAST:event_txSenhaActionPerformed
+
+    private void txLoginKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txLoginKeyPressed
+           if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+           validarLogin(); 
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_txLoginKeyPressed
+
+    private void txSenhaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txSenhaKeyPressed
+           if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+           validarLogin(); 
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_txSenhaKeyPressed
 
     /**
      * @param args the command line arguments

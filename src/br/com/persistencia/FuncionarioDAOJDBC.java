@@ -199,11 +199,12 @@ public class FuncionarioDAOJDBC implements FuncionarioDAO {
             pstm.setString(5, f.getRg());
             pstm.setString(6, f.getCpf());
             pstm.setString(7, f.getTelefone());
-            pstm.setInt(8, f.getEndereco().getCodigo());
-            pstm.setDouble(9, f.getSalario());
-            pstm.setString(10, f.getCargo());
-            pstm.setString(11, f.getLogin());
-            pstm.setString(12, f.getSenha());
+            //pstm.setInt(8, f.getEndereco().getCodigo());
+            pstm.setDouble(8, f.getSalario());
+            pstm.setString(9, f.getCargo());
+            pstm.setString(10, f.getLogin());
+            pstm.setString(11, f.getSenha());
+            pstm.setInt(12, f.getCodigo());
 
             pstm.execute();
             retorno = f.getCodigo();
@@ -237,26 +238,26 @@ public class FuncionarioDAOJDBC implements FuncionarioDAO {
 
                 f.setCodigo(rs.getInt("codigo"));
                 f.setNome(rs.getString("nome"));
-                f.setIdade(rs.getInt("idade"));
-                f.setSexo(rs.getString("sexo"));
-                f.setDataNascimento(rs.getDate("data_nascimento"));
-                f.setRg(rs.getString("rg"));
+                //f.setIdade(rs.getInt("idade"));
+               // f.setSexo(rs.getString("sexo"));
+                //f.setDataNascimento(rs.getDate("data_nascimento"));
+                //f.setRg(rs.getString("rg"));
                 f.setCpf(rs.getString("cpf"));
-                f.setTelefone(rs.getString("telefone"));
+                //f.setTelefone(rs.getString("telefone"));
 
-                Endereco e = new Endereco();
-                e.setEstado(rs.getString("estado"));
-                e.setCidade(rs.getString("cidade"));
-                e.setBairro(rs.getString("bairro"));
-                e.setRua(rs.getString("rua"));
-                e.setComplemento(rs.getString("complemento"));
-                e.setNumero(rs.getInt("numero"));
-                f.setEndereco(e);
+                /*Endereco e = new Endereco();
+                e.setEstado(rs.getString("endereco.estado"));
+                e.setCidade(rs.getString("endereco.cidade"));
+                e.setBairro(rs.getString("endereco.bairro"));
+                e.setRua(rs.getString("endereco.rua"));
+                e.setComplemento(rs.getString("endereco.complemento"));
+                e.setNumero(rs.getInt("endereco.numero"));
+                f.setEndereco(e);*/
 
-                f.setSalario(rs.getDouble("salario"));
+                //f.setSalario(rs.getDouble("salario"));
                 f.setCargo(rs.getString("cargo"));
-                f.setLogin(rs.getString("login"));
-                f.setSenha(rs.getString("senha"));
+                //f.setLogin(rs.getString("login"));
+                //f.setSenha(rs.getString("senha"));
 
                 funcionarios.add(f);
             }

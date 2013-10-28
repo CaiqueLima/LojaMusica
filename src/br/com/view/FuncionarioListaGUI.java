@@ -59,7 +59,7 @@ public class FuncionarioListaGUI extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jList1);
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Janela de Listagem");
         setMaximumSize(new java.awt.Dimension(800, 600));
         setMinimumSize(new java.awt.Dimension(800, 600));
@@ -174,7 +174,7 @@ public class FuncionarioListaGUI extends javax.swing.JFrame {
 
         modelo.setNumRows(0);
         for (Funcionario f : fc.listByNome(nome)) {
-            modelo.addRow(new Object[]{f.getCodigo(), f.getNome(), f.getCpf(), f.getLogin()});
+            modelo.addRow(new Object[]{f.getCodigo(), f.getNome(), f.getCpf(), f.getCargo()});
         }
     }//GEN-LAST:event_txPesquisarActionPerformed
 
@@ -185,8 +185,6 @@ public class FuncionarioListaGUI extends javax.swing.JFrame {
             int idUsuario = (int) tabela.getValueAt(linhaSelecionada, 0);
             FuncionarioInserirGUI fi = new FuncionarioInserirGUI(modelo, linhaSelecionada, idUsuario);
             fi.setVisible(true);
-            
-      
         } else {
             JOptionPane.showMessageDialog(null, "Nenhuma linha foi selecionada.");
         }

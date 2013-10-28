@@ -29,12 +29,14 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         PainelFundo = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         btFuncionario = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Janela Principal");
         getContentPane().setLayout(new java.awt.BorderLayout());
 
         PainelFundo.setBackground(new java.awt.Color(255, 255, 255));
@@ -68,6 +70,19 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         );
 
         PainelFundo.add(jPanel1, java.awt.BorderLayout.PAGE_START);
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 772, Short.MAX_VALUE)
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 550, Short.MAX_VALUE)
+        );
+
+        PainelFundo.add(jPanel3, java.awt.BorderLayout.CENTER);
 
         getContentPane().add(PainelFundo, java.awt.BorderLayout.CENTER);
 
@@ -119,5 +134,6 @@ public class JanelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel3;
     // End of variables declaration//GEN-END:variables
 }
